@@ -14,7 +14,7 @@ Build requirements:
   autoconf2.5-2.61-1
   automake1.9-1.9.6-2
   binutils-20060817-1
-  cygport-0.2.11-1
+  cygport-0.3.5-1
   gawk-3.1.5-4
   gcc-core-3.4.4-3
   libtool1.5-1.5.23a-2
@@ -30,17 +30,17 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack exiv2-0.14-X-src.tar.bz2
+  unpack exiv2-0.15-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./exiv2-0.14-X.cygport all
+  cygport ./exiv2-0.15-X.cygport all
 
 This will create:
-  /usr/src/exiv2-0.14-X-src.tar.bz2
-  /usr/src/exiv2-0.14-X.tar.bz2
-  /usr/src/libexiv2_0-0.14-X.tar.bz2
-  /usr/src/libexiv2-devel-0.14-X.tar.bz2
+  /usr/src/exiv2-0.15-X-src.tar.bz2
+  /usr/src/exiv2-0.15-X.tar.bz2
+  /usr/src/libexiv2_0-0.15-X.tar.bz2
+  /usr/src/libexiv2-devel-0.15-X.tar.bz2
 
 -------------------------------------------
 
@@ -48,9 +48,9 @@ Files included in the binary packages:
 
 (exiv2)
   /usr/bin/exiv2.exe
-  /usr/share/doc/Cygwin/exiv2-0.14.README
-  /usr/share/doc/exiv2-0.14/COPYING
-  /usr/share/doc/exiv2-0.14/README
+  /usr/share/doc/Cygwin/exiv2-0.15.README
+  /usr/share/doc/exiv2-0.15/COPYING
+  /usr/share/doc/exiv2-0.15/README
   /usr/share/locale/de/LC_MESSAGES/exiv2.mo
   /usr/share/locale/es/LC_MESSAGES/exiv2.mo
   /usr/share/locale/fi/LC_MESSAGES/exiv2.mo
@@ -110,6 +110,9 @@ Files included in the binary packages:
 -------------------------------------------
 
 Port Notes:
+
+----- version 0.15-1 -----
+Version bump.
 
 ----- version 0.14-1 -----
 Version bump.
