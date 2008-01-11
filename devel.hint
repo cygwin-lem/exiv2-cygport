@@ -1,5 +1,5 @@
 category: Graphics Libs
-requires: cygwin libiconv gettext zlib
+requires: cygwin expat libiconv gettext zlib
 external-source: exiv2
 sdesc: "Exif and IPTC image metadata library (development)"
 ldesc: "Exiv2 is a C++ library and a command line utility to access
