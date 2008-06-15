@@ -1,5 +1,5 @@
 category: Graphics
-requires: cygwin libexiv2_2 libintl8
-sdesc: "Exif and IPTC image metadata library (utility)"
+requires: cygwin libexiv2_4 libintl8
+sdesc: "Exiv, IPTC, and XMP image metadata library (utility)"
 ldesc: "Exiv2 is a C++ library and a command line utility to access
-Exif and IPTC image metadata."
+Exiv, IPTC, and XMP image metadata."

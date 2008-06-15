@@ -1,24 +1,22 @@
 exiv2
 ------------------------------------------
 Exiv2 is a C++ library and a command line utility to access 
-Exif and IPTC image metadata.
+Exif, IPTC, and XMP image metadata.
 
 Runtime requirements:
-  cygwin-1.5.25-7
-  libexpat0-1.95.8-2
+  cygwin-1.5.25-11
+  libexpat1-2.0.1-1
   libiconv2-1.11-1
   libintl8-0.15-1
   zlib-1.2.3-2
 
 Build requirements:
-  cygwin-1.5.25-7
   autoconf2.5-2.61-1
-  automake1.9-1.9.6-2
-  binutils-20060817-1
-  cygport-0.3.7-1
+  binutils-20080523-1
+  cygport-0.3.11-1
   gawk-3.1.6-1
   gcc-core-3.4.4-3
-  libtool1.5-1.5.23a-2
+  gcc-g++-3.4.4-3
   make-3.81-1
   sed-4.1.5-1
 
@@ -31,17 +29,17 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack exiv2-0.16-X-src.tar.bz2
+  unpack exiv2-0.17-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./exiv2-0.16-X.cygport all
+  cygport ./exiv2-0.17-X.cygport all
 
 This will create:
-  /usr/src/exiv2-0.16-X-src.tar.bz2
-  /usr/src/exiv2-0.16-X.tar.bz2
-  /usr/src/libexiv2_2-0.16-X.tar.bz2
-  /usr/src/libexiv2-devel-0.16-X.tar.bz2
+  /usr/src/exiv2-0.17-X-src.tar.bz2
+  /usr/src/exiv2-0.17-X.tar.bz2
+  /usr/src/libexiv2_4-0.17-X.tar.bz2
+  /usr/src/libexiv2-devel-0.17-X.tar.bz2
 
 -------------------------------------------
 
@@ -49,23 +47,25 @@ Files included in the binary packages:
 
 (exiv2)
   /usr/bin/exiv2.exe
-  /usr/share/doc/exiv2-0.16/COPYING
-  /usr/share/doc/exiv2-0.16/README
+  /usr/share/doc/exiv2-0.17/COPYING
+  /usr/share/doc/exiv2-0.17/README
   /usr/share/locale/de/LC_MESSAGES/exiv2.mo
   /usr/share/locale/es/LC_MESSAGES/exiv2.mo
   /usr/share/locale/fi/LC_MESSAGES/exiv2.mo
   /usr/share/locale/fr/LC_MESSAGES/exiv2.mo
   /usr/share/locale/pl/LC_MESSAGES/exiv2.mo
   /usr/share/locale/ru/LC_MESSAGES/exiv2.mo
+  /usr/share/locale/sk/LC_MESSAGES/exiv2.mo
   /usr/share/man/man1/exiv2.1.gz
 
-(libexiv2_2)
-  /usr/bin/cygexiv2-2.dll
+(libexiv2_4)
+  /usr/bin/cygexiv2-4.dll
 
 (libexiv2-devel)
-  /usr/bin/exiv2.exe
   /usr/include/exiv2/basicio.hpp
+  /usr/include/exiv2/bmpimage.hpp
   /usr/include/exiv2/canonmn.hpp
+  /usr/include/exiv2/convert.hpp
   /usr/include/exiv2/cr2image.hpp
   /usr/include/exiv2/crwimage.hpp
   /usr/include/exiv2/datasets.hpp
@@ -75,9 +75,11 @@ Files included in the binary packages:
   /usr/include/exiv2/exv_msvc.h
   /usr/include/exiv2/fujimn.hpp
   /usr/include/exiv2/futils.hpp
+  /usr/include/exiv2/gifimage.hpp
   /usr/include/exiv2/ifd.hpp
   /usr/include/exiv2/image.hpp
   /usr/include/exiv2/iptc.hpp
+  /usr/include/exiv2/jp2image.hpp
   /usr/include/exiv2/jpgimage.hpp
   /usr/include/exiv2/makernote.hpp
   /usr/include/exiv2/makernote2.hpp
@@ -93,11 +95,13 @@ Files included in the binary packages:
   /usr/include/exiv2/pngchunk.hpp
   /usr/include/exiv2/pngimage.hpp
   /usr/include/exiv2/properties.hpp
+  /usr/include/exiv2/psdimage.hpp
   /usr/include/exiv2/rafimage.hpp
   /usr/include/exiv2/rcsid.hpp
   /usr/include/exiv2/sigmamn.hpp
   /usr/include/exiv2/sonymn.hpp
   /usr/include/exiv2/tags.hpp
+  /usr/include/exiv2/tgaimage.hpp
   /usr/include/exiv2/tiffcomposite.hpp
   /usr/include/exiv2/tifffwd.hpp
   /usr/include/exiv2/tiffimage.hpp
@@ -107,6 +111,7 @@ Files included in the binary packages:
   /usr/include/exiv2/value.hpp
   /usr/include/exiv2/version.hpp
   /usr/include/exiv2/xmp.hpp
+  /usr/include/exiv2/xmpsidecar.hpp
   /usr/lib/libexiv2.a
   /usr/lib/libexiv2.dll.a
   /usr/lib/libexiv2.la
@@ -115,6 +120,9 @@ Files included in the binary packages:
 -------------------------------------------
 
 Port Notes:
+
+----- version 0.17-1 -----
+Version bump.
 
 ----- version 0.16-1 -----
 Version bump.
