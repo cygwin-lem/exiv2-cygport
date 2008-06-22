@@ -4,7 +4,7 @@ Exiv2 is a C++ library and a command line utility to access
 Exif, IPTC, and XMP image metadata.
 
 Runtime requirements:
-  cygwin-1.5.25-11
+  cygwin-1.5.25-15
   libexpat1-2.0.1-1
   libiconv2-1.11-1
   libintl8-0.15-1
@@ -29,17 +29,17 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack exiv2-0.17-X-src.tar.bz2
+  unpack exiv2-0.17.1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./exiv2-0.17-X.cygport all
+  cygport ./exiv2-0.17.1-X.cygport all
 
 This will create:
-  /usr/src/exiv2-0.17-X-src.tar.bz2
-  /usr/src/exiv2-0.17-X.tar.bz2
-  /usr/src/libexiv2_4-0.17-X.tar.bz2
-  /usr/src/libexiv2-devel-0.17-X.tar.bz2
+  /usr/src/exiv2-0.17.1-X-src.tar.bz2
+  /usr/src/exiv2-0.17.1-X.tar.bz2
+  /usr/src/libexiv2_4-0.17.1-X.tar.bz2
+  /usr/src/libexiv2-devel-0.17.1-X.tar.bz2
 
 -------------------------------------------
 
@@ -47,8 +47,8 @@ Files included in the binary packages:
 
 (exiv2)
   /usr/bin/exiv2.exe
-  /usr/share/doc/exiv2-0.17/COPYING
-  /usr/share/doc/exiv2-0.17/README
+  /usr/share/doc/exiv2-0.17.1/COPYING
+  /usr/share/doc/exiv2-0.17.1/README
   /usr/share/locale/de/LC_MESSAGES/exiv2.mo
   /usr/share/locale/es/LC_MESSAGES/exiv2.mo
   /usr/share/locale/fi/LC_MESSAGES/exiv2.mo
@@ -120,6 +120,9 @@ Files included in the binary packages:
 -------------------------------------------
 
 Port Notes:
+
+----- version 0.17.1-1 -----
+Version bump.
 
 ----- version 0.17-1 -----
 Version bump.
