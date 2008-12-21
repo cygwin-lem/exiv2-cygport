@@ -6,14 +6,14 @@ Exif, IPTC, and XMP image metadata.
 Runtime requirements:
   cygwin-1.5.25-15
   libexpat1-2.0.1-1
-  libiconv2-1.11-1
-  libintl8-0.15-1
+  libiconv2-1.12-1
+  libintl8-0.17-2
   zlib-1.2.3-2
 
 Build requirements:
-  autoconf2.5-2.61-1
+  autoconf2.5-2.63-1
   binutils-20080523-1
-  cygport-0.3.11-1
+  cygport-0.4.3-1
   gawk-3.1.6-1
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
@@ -29,17 +29,17 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack exiv2-0.17.1-X-src.tar.bz2
+  unpack exiv2-0.18-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./exiv2-0.17.1-X.cygport all
+  cygport ./exiv2-0.18-X.cygport all
 
 This will create:
-  /usr/src/exiv2-0.17.1-X-src.tar.bz2
-  /usr/src/exiv2-0.17.1-X.tar.bz2
-  /usr/src/libexiv2_4-0.17.1-X.tar.bz2
-  /usr/src/libexiv2-devel-0.17.1-X.tar.bz2
+  /usr/src/exiv2-0.18-X-src.tar.bz2
+  /usr/src/exiv2-0.18-X.tar.bz2
+  /usr/src/libexiv2_4-0.18-X.tar.bz2
+  /usr/src/libexiv2-devel-0.18-X.tar.bz2
 
 -------------------------------------------
 
@@ -47,8 +47,8 @@ Files included in the binary packages:
 
 (exiv2)
   /usr/bin/exiv2.exe
-  /usr/share/doc/exiv2-0.17.1/COPYING
-  /usr/share/doc/exiv2-0.17.1/README
+  /usr/share/doc/exiv2-0.18/COPYING
+  /usr/share/doc/exiv2-0.18/README
   /usr/share/locale/de/LC_MESSAGES/exiv2.mo
   /usr/share/locale/es/LC_MESSAGES/exiv2.mo
   /usr/share/locale/fi/LC_MESSAGES/exiv2.mo
@@ -58,8 +58,8 @@ Files included in the binary packages:
   /usr/share/locale/sk/LC_MESSAGES/exiv2.mo
   /usr/share/man/man1/exiv2.1.gz
 
-(libexiv2_4)
-  /usr/bin/cygexiv2-4.dll
+(libexiv2_5)
+  /usr/bin/cygexiv2-5.dll
 
 (libexiv2-devel)
   /usr/include/exiv2/basicio.hpp
@@ -76,13 +76,10 @@ Files included in the binary packages:
   /usr/include/exiv2/fujimn.hpp
   /usr/include/exiv2/futils.hpp
   /usr/include/exiv2/gifimage.hpp
-  /usr/include/exiv2/ifd.hpp
   /usr/include/exiv2/image.hpp
   /usr/include/exiv2/iptc.hpp
   /usr/include/exiv2/jp2image.hpp
   /usr/include/exiv2/jpgimage.hpp
-  /usr/include/exiv2/makernote.hpp
-  /usr/include/exiv2/makernote2.hpp
   /usr/include/exiv2/metadatum.hpp
   /usr/include/exiv2/minoltamn.hpp
   /usr/include/exiv2/mn.hpp
@@ -92,8 +89,8 @@ Files included in the binary packages:
   /usr/include/exiv2/orfimage.hpp
   /usr/include/exiv2/panasonicmn.hpp
   /usr/include/exiv2/pentaxmn.hpp
-  /usr/include/exiv2/pngchunk.hpp
   /usr/include/exiv2/pngimage.hpp
+  /usr/include/exiv2/preview.hpp
   /usr/include/exiv2/properties.hpp
   /usr/include/exiv2/psdimage.hpp
   /usr/include/exiv2/rafimage.hpp
@@ -102,11 +99,7 @@ Files included in the binary packages:
   /usr/include/exiv2/sonymn.hpp
   /usr/include/exiv2/tags.hpp
   /usr/include/exiv2/tgaimage.hpp
-  /usr/include/exiv2/tiffcomposite.hpp
-  /usr/include/exiv2/tifffwd.hpp
   /usr/include/exiv2/tiffimage.hpp
-  /usr/include/exiv2/tiffparser.hpp
-  /usr/include/exiv2/tiffvisitor.hpp
   /usr/include/exiv2/types.hpp
   /usr/include/exiv2/value.hpp
   /usr/include/exiv2/version.hpp
@@ -120,6 +113,9 @@ Files included in the binary packages:
 -------------------------------------------
 
 Port Notes:
+
+----- version 0.18-1 -----
+Version bump.
 
 ----- version 0.17.1-1 -----
 Version bump.

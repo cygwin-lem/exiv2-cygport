@@ -1,0 +1,21 @@
+DESCRIPTION="Another EXIF library"
+HOMEPAGE="http://www.exiv2.org/"
+SRC_URI="http://www.exiv2.org/${P}.tar.gz"
+PATCH_URI="0.17.1-no-undefined.patch"
+
+PKG_NAMES="${PN} lib${PN}_5 lib${PN}-devel"
+exiv2_CONTENTS="--exclude=html usr/bin/*.exe usr/share/"
+libexiv2_5_CONTENTS="usr/bin/*-5.dll"
+libexiv2_devel_CONTENTS="usr/include/ usr/lib/"
+
+DIFF_EXCLUDES="configure"
+
+src_compile() {
+	lndirs
+	cd ${S}/config
+	NO_AUTOHEADER=1 cygautoreconf
+	mv -f configure ${S}/configure
+	cd ${B}
+	cygconf
+	cygmake
+}
