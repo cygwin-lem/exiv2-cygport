@@ -4,21 +4,23 @@ Exiv2 is a C++ library and a command line utility to access
 Exif, IPTC, and XMP image metadata.
 
 Runtime requirements:
-  cygwin-1.5.25-15
+  cygwin-1.7.0-48
   libexpat1-2.0.1-1
-  libiconv2-1.12-1
-  libintl8-0.17-2
-  zlib-1.2.3-2
+  libgcc1-4.3.2-2
+  libiconv2-1.12-10
+  libintl8-0.17-10
+  libstdc++6-4.3.2-2
+  zlib0-1.2.3-10
 
 Build requirements:
-  autoconf2.5-2.63-1
-  binutils-20080523-1
-  cygport-0.4.3-1
-  gawk-3.1.6-1
-  gcc-core-3.4.4-3
-  gcc-g++-3.4.4-3
-  make-3.81-1
-  sed-4.1.5-1
+  autoconf2.5-2.63-10
+  binutils-20080624-2
+  cygport-0.9.6-1
+  gawk-3.1.6-2
+  gcc4-core-4.3.2-2
+  gcc4-g++-4.3.2-2
+  make-3.81-2
+  sed-4.1.5-2
 
 Canonical website:
   http://www.exiv2.org/
@@ -29,17 +31,17 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack exiv2-0.18-X-src.tar.bz2
+  unpack exiv2-0.18.1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./exiv2-0.18-X.cygport all
+  cygport ./exiv2-0.18.1-X.cygport all
 
 This will create:
-  /usr/src/exiv2-0.18-X-src.tar.bz2
-  /usr/src/exiv2-0.18-X.tar.bz2
-  /usr/src/libexiv2_4-0.18-X.tar.bz2
-  /usr/src/libexiv2-devel-0.18-X.tar.bz2
+  /usr/src/exiv2-0.18.1-X-src.tar.bz2
+  /usr/src/exiv2-0.18.1-X.tar.bz2
+  /usr/src/libexiv2_4-0.18.1-X.tar.bz2
+  /usr/src/libexiv2-devel-0.18.1-X.tar.bz2
 
 -------------------------------------------
 
@@ -47,8 +49,8 @@ Files included in the binary packages:
 
 (exiv2)
   /usr/bin/exiv2.exe
-  /usr/share/doc/exiv2-0.18/COPYING
-  /usr/share/doc/exiv2-0.18/README
+  /usr/share/doc/exiv2/COPYING
+  /usr/share/doc/exiv2/README
   /usr/share/locale/de/LC_MESSAGES/exiv2.mo
   /usr/share/locale/es/LC_MESSAGES/exiv2.mo
   /usr/share/locale/fi/LC_MESSAGES/exiv2.mo
@@ -114,26 +116,8 @@ Files included in the binary packages:
 
 Port Notes:
 
------ version 0.18-1 -----
-Version bump.
-
------ version 0.17.1-1 -----
-Version bump.
-
------ version 0.17-1 -----
-Version bump.
-
------ version 0.16-1 -----
-Version bump.
-
------ version 0.15-1 -----
-Version bump.
-
------ version 0.14-1 -----
-Version bump.
-
------ version 0.11-1 -----
-Initial release for Cygwin.
+----- version 0.18.1-1 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:
