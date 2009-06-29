@@ -1,5 +1,5 @@
 category: Graphics
-requires: cygwin libexiv2_5 libgcc1 libintl8 libstdc++6
+requires: libexiv2_5 libgcc1 libintl8 libstdc++6
 sdesc: "Exiv, IPTC, and XMP image metadata library (utility)"
 ldesc: "Exiv2 is a C++ library and a command line utility to access
 Exiv, IPTC, and XMP image metadata."
