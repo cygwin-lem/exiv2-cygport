@@ -4,7 +4,7 @@ Exiv2 is a C++ library and a command line utility to access
 Exif, IPTC, and XMP image metadata.
 
 Runtime requirements:
-  cygwin-1.7.1-1
+  cygwin-1.7.5-1
   libexpat1-2.0.1-1
   libgcc1-4.3.4-3
   libiconv2-1.13.1-1
@@ -14,13 +14,13 @@ Runtime requirements:
 
 Build requirements:
   autoconf2.5-2.65-10
-  binutils-2.19.51-1
-  cygport-0.9.80-1
+  binutils-2.20.51-1
+  cygport-0.9.83-1
   gawk-3.1.7-1
   gcc4-core-4.3.4-3
   gcc4-g++-4.3.4-3
   make-3.81-2
-  sed-4.1.5-2
+  sed-4.2.1-1
 
 Canonical website:
   http://www.exiv2.org/
@@ -31,21 +31,24 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack exiv2-0.18.2-X-src.tar.bz2
+  unpack exiv2-0.19-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./exiv2-0.18.2-X.cygport all
+  cygport ./exiv2-0.19-X.cygport all
 
 This will create:
-  /usr/src/exiv2-0.18.2-X-src.tar.bz2
-  /usr/src/exiv2-0.18.2-X.tar.bz2
-  /usr/src/libexiv2-devel-0.18.2-X.tar.bz2
-  /usr/src/libexiv2_5-0.18.2-X.tar.bz2
+  /usr/src/exiv2-0.19-X-src.tar.bz2
+  /usr/src/exiv2-0.19-X.tar.bz2
+  /usr/src/libexiv2-devel-0.19-X.tar.bz2
+  /usr/src/libexiv2_6-0.19-X.tar.bz2
 
 -------------------------------------------
 
 Port Notes:
+
+----- version 0.19-1 -----
+ABI version bump.
 
 ----- version 0.18.2-1 -----
 Bugfix version bump.

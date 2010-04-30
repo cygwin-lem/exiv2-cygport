@@ -3,9 +3,9 @@ HOMEPAGE="http://www.exiv2.org/"
 SRC_URI="http://www.exiv2.org/${P}.tar.gz"
 PATCH_URI="0.17.1-no-undefined.patch"
 
-PKG_NAMES="${PN} lib${PN}_5 lib${PN}-devel"
+PKG_NAMES="${PN} lib${PN}_6 lib${PN}-devel"
 exiv2_CONTENTS="--exclude=html usr/bin/*.exe usr/share/"
-libexiv2_5_CONTENTS="usr/bin/*-5.dll"
+libexiv2_6_CONTENTS="usr/bin/*-6.dll"
 libexiv2_devel_CONTENTS="usr/include/ usr/lib/"
 
 DIFF_EXCLUDES="configure"
@@ -16,6 +16,6 @@ src_compile() {
 	NO_AUTOHEADER=1 cygautoreconf
 	mv -f configure ${S}/configure
 	cd ${B}
-	cygconf
+	cygconf --disable-visibility
 	cygmake
 }
