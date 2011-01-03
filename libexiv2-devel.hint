@@ -1,5 +1,5 @@
 category: Graphics
-requires: libexiv2_6 libexpat1-devel libiconv gettext libstdc++6-devel zlib-devel
+requires: libexiv2_9 libexpat1-devel libiconv gettext libstdc++6-devel zlib-devel
 external-source: exiv2
 sdesc: "Exiv, IPTC, and XMP image metadata library (development)"
 ldesc: "Exiv2 is a C++ library and a command line utility to access
