@@ -3,9 +3,9 @@ HOMEPAGE="http://www.exiv2.org/"
 SRC_URI="http://www.exiv2.org/${P}.tar.gz"
 PATCH_URI="0.17.1-no-undefined.patch"
 
-PKG_NAMES="${PN} lib${PN}_9 lib${PN}-devel"
+PKG_NAMES="${PN} lib${PN}_11 lib${PN}-devel"
 exiv2_CONTENTS="--exclude=html usr/bin/*.exe usr/share/"
-libexiv2_9_CONTENTS="usr/bin/*-9.dll"
+libexiv2_11_CONTENTS="usr/bin/cygexiv2-11.dll"
 libexiv2_devel_CONTENTS="usr/include/ usr/lib/"
 
 src_compile() {
