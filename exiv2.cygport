@@ -1,0 +1,32 @@
+NAME="exiv2"
+VERSION=0.23
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="Exiv, IPTC, and XMP image metadata library"
+DESCRIPTION="Exiv2 is a C++ library and a command line utility to access
+Exiv, IPTC, and XMP image metadata."
+HOMEPAGE="http://www.exiv2.org/"
+SRC_URI="http://www.exiv2.org/exiv2-${VERSION}.tar.gz"
+PATCH_URI="
+	0.17.1-no-undefined.patch
+	0.23-autoconf.patch
+"
+
+PKG_NAMES="${NAME} lib${NAME}_12 lib${NAME}-devel"
+exiv2_CATEGORY="Graphics"
+exiv2_SUMMARY=${SUMMARY/library/utility}
+exiv2_CONTENTS="--exclude=html usr/bin/*.exe usr/share/"
+libexiv2_12_CONTENTS="usr/bin/cygexiv2-12.dll"
+libexiv2_devel_CONTENTS="usr/include/ usr/lib/"
+
+src_compile() {
+	cd ${S}
+	rm -f config/aclocal.m4
+	ln -s config/configure.ac .
+	NO_AUTOHEADER=1 cygautoreconf
+	rm configure.ac
+	lndirs
+	cd ${B}
+	cygconf --disable-visibility
+	cygmake
+}
