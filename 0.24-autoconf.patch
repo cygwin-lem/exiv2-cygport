@@ -1,5 +1,5 @@
---- origsrc/exiv2-0.23/config/configure.ac	2012-03-23 05:40:44.000000000 -0500
-+++ src/exiv2-0.23/config/configure.ac	2013-07-30 10:44:15.520941800 -0500
+--- origsrc/exiv2-0.24/config/configure.ac	2013-07-23 21:47:31.000000000 -0500
++++ src/exiv2-0.24/config/configure.ac	2014-04-30 19:04:51.899862500 -0500
 @@ -36,6 +36,7 @@ AC_CANONICAL_HOST
  # i18n support
  # ---------------------------------------------------------------------------
@@ -8,41 +8,31 @@
  
  # ---------------------------------------------------------------------------
  # Libtool support
-@@ -48,8 +49,7 @@ AC_SUBST([LIBTOOL_DEPS])
- # ---------------------------------------------------------------------------
- AC_CHECK_LIBM()
- LIBS="$LIBS $LIBM"
--CHECK_ZLIB()
--AC_SUBST(HAVE_LIBZ,$HAVE_LIBZ)
-+AX_CHECK_ZLIB()
- AM_ICONV
- 
- # ---------------------------------------------------------------------------
-@@ -106,12 +106,12 @@ AC_ARG_ENABLE(visibility,
+@@ -111,12 +112,12 @@ AC_ARG_ENABLE(visibility,
  AC_MSG_RESULT($VISIBILITY_SUPPORT)
  if test "$VISIBILITY_SUPPORT" = "yes"; then
      # Sun Studio C++ compiler (which apparently ignores -fvisibility-inlines-hidden)
 -    AX_CXX_CHECK_FLAG(-xldscope=hidden,[],[],[VISIBILITY_SUPPORT=yes],[VISIBILITY_SUPPORT=no])
-+    AX_CHECK_COMPILE_FLAG(-xldscope=hidden,[VISIBILITY_SUPPORT=yes],[VISIBILITY_SUPPORT=no])
++    AX_CHECK_COMPILE_FLAG(-xldscope=hidden,[],[],[VISIBILITY_SUPPORT=yes],[VISIBILITY_SUPPORT=no])
      if test "$VISIBILITY_SUPPORT" = "yes"; then
          CXXFLAGS="${CXXFLAGS} -xldscope=hidden"
      else
          # GNU g++
 -        AX_CXX_CHECK_FLAG(-fvisibility-inlines-hidden,[],[],[VISIBILITY_SUPPORT=yes],[VISIBILITY_SUPPORT=no])
-+        AX_CHECK_COMPILE_FLAG(-fvisibility-inlines-hidden,[VISIBILITY_SUPPORT=yes],[VISIBILITY_SUPPORT=no])
-     	if test "$VISIBILITY_SUPPORT" = "yes"; then
++        AX_CHECK_COMPILE_FLAG(-fvisibility-inlines-hidden,[],[],[VISIBILITY_SUPPORT=yes],[VISIBILITY_SUPPORT=no])
+         if test "$VISIBILITY_SUPPORT" = "yes"; then
             CXXFLAGS="${CXXFLAGS} -fvisibility=hidden -fvisibility-inlines-hidden"
          fi
---- origsrc/exiv2-0.23/src/Makefile	2013-07-30 10:42:34.397157900 -0500
-+++ src/exiv2-0.23/src/Makefile	2013-07-30 09:42:39.818559700 -0500
-@@ -92,10 +92,8 @@ CCSRC =  basicio.cpp           \
+--- origsrc/exiv2-0.24/src/Makefile	2014-04-30 19:02:47.009503400 -0500
++++ src/exiv2-0.24/src/Makefile	2014-04-30 19:10:28.462600500 -0500
+@@ -94,10 +94,8 @@ CCSRC =  asfvideo.cpp          \
  	 orfimage.cpp          \
  	 panasonicmn.cpp       \
  	 pgfimage.cpp
 -ifdef HAVE_LIBZ
- CCSRC += pngimage.cpp          \
+ CCSRC += pngimage.cpp      \
  	 pngchunk.cpp
 -endif
- CCSRC += preview.cpp           \
+ CCSRC += preview.cpp       \
  	 properties.cpp        \
  	 psdimage.cpp          \

@@ -1,5 +1,5 @@
 NAME="exiv2"
-VERSION=0.23
+VERSION=0.24
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Exiv, IPTC, and XMP image metadata library"
@@ -9,14 +9,14 @@ HOMEPAGE="http://www.exiv2.org/"
 SRC_URI="http://www.exiv2.org/exiv2-${VERSION}.tar.gz"
 PATCH_URI="
 	0.17.1-no-undefined.patch
-	0.23-autoconf.patch
+	0.24-autoconf.patch
 "
 
-PKG_NAMES="${NAME} lib${NAME}_12 lib${NAME}-devel"
+PKG_NAMES="${NAME} lib${NAME}_13 lib${NAME}-devel"
 exiv2_CATEGORY="Graphics"
 exiv2_SUMMARY=${SUMMARY/library/utility}
 exiv2_CONTENTS="--exclude=html usr/bin/*.exe usr/share/"
-libexiv2_12_CONTENTS="usr/bin/cygexiv2-12.dll"
+libexiv2_13_CONTENTS="usr/bin/cygexiv2-13.dll"
 libexiv2_devel_CONTENTS="usr/include/ usr/lib/"
 
 src_compile() {
