@@ -1,6 +1,6 @@
 NAME="exiv2"
 VERSION=0.24
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="Exiv, IPTC, and XMP image metadata library"
 DESCRIPTION="Exiv2 is a C++ library and a command line utility to access
@@ -8,6 +8,7 @@ Exiv, IPTC, and XMP image metadata."
 HOMEPAGE="http://www.exiv2.org/"
 SRC_URI="http://www.exiv2.org/exiv2-${VERSION}.tar.gz"
 PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/exiv2.git/plain/exiv2-0.24-CVE-2014-9449.patch
 	0.17.1-no-undefined.patch
 	0.24-autoconf.patch
 "
