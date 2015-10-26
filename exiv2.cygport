@@ -1,6 +1,8 @@
+inherit cmake
+
 NAME="exiv2"
-VERSION=0.24
-RELEASE=2
+VERSION=0.25
+RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Exiv, IPTC, and XMP image metadata library"
 DESCRIPTION="Exiv2 is a C++ library and a command line utility to access
@@ -8,26 +10,26 @@ Exiv, IPTC, and XMP image metadata."
 HOMEPAGE="http://www.exiv2.org/"
 SRC_URI="http://www.exiv2.org/exiv2-${VERSION}.tar.gz"
 PATCH_URI="
-	http://pkgs.fedoraproject.org/cgit/exiv2.git/plain/exiv2-0.24-CVE-2014-9449.patch
-	0.17.1-no-undefined.patch
-	0.24-autoconf.patch
+	http://pkgs.fedoraproject.org/cgit/exiv2.git/plain/exiv2-0.24-cmake_mandir.patch
+	0.25-find-libintl.patch
 "
 
-PKG_NAMES="${NAME} lib${NAME}_13 lib${NAME}-devel"
+PKG_NAMES="${NAME} lib${NAME}_14 lib${NAME}-devel"
 exiv2_CATEGORY="Graphics"
 exiv2_SUMMARY=${SUMMARY/library/utility}
 exiv2_CONTENTS="--exclude=html usr/bin/*.exe usr/share/"
-libexiv2_13_CONTENTS="usr/bin/cygexiv2-13.dll"
+libexiv2_14_CONTENTS="usr/bin/cygexiv2-14.dll"
 libexiv2_devel_CONTENTS="usr/include/ usr/lib/"
 
-src_compile() {
-	cd ${S}
-	rm -f config/aclocal.m4
-	ln -s config/configure.ac .
-	NO_AUTOHEADER=1 cygautoreconf
-	rm configure.ac
-	lndirs
+DIFF_EXCLUDES="exv_conf.h svn_version.h"
+
+CYGCMAKE_ARGS="
+	-DEXIV2_ENABLE_BUILD_PO:BOOL=ON
+	-DEXIV2_ENABLE_BUILD_SAMPLES:BOOL=OFF
+"
+
+src_install() {
 	cd ${B}
-	cygconf --disable-visibility
-	cygmake
+	cyginstall
+	rm -f ${D}/usr/lib/pkgconfig/*.lsm
 }

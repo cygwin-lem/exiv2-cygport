@@ -1,0 +1,29 @@
+--- origsrc/exiv2-0.25/config/CMakeChecks.txt	2015-04-30 10:31:18.000000000 -0500
++++ src/exiv2-0.25/config/CMakeChecks.txt	2015-10-26 10:57:55.775278600 -0500
+@@ -38,6 +38,7 @@ INCLUDE( CheckCSourceCompiles )
+ INCLUDE( CheckCXXSourceCompiles )
+ 
+ INCLUDE( FindIconv )
++INCLUDE( FindIntl )
+ 
+ SET( STDC_HEADERS ON )
+ SET( HAVE_DECL_STRERROR_R 0 )
+@@ -107,6 +108,7 @@ ELSE( EXIV2_ENABLE_SHARED )
+ ENDIF( EXIV2_ENABLE_SHARED )
+ 
+ IF( EXIV2_ENABLE_NLS )
++    SET( ENABLE_NLS 1 )
+     IF( NOT LOCALEDIR )
+         SET( LOCALEDIR "${CMAKE_INSTALL_PREFIX}/share/locale" )
+         IF( WIN32 )
+--- origsrc/exiv2-0.25/src/CMakeLists.txt	2015-10-26 03:33:23.828439800 -0500
++++ src/exiv2-0.25/src/CMakeLists.txt	2015-10-26 10:56:30.452094600 -0500
+@@ -280,7 +280,7 @@ IF( EXIV2_ENABLE_PNG )
+ ENDIF()
+ 
+ IF( EXIV2_ENABLE_NLS )
+-    TARGET_LINK_LIBRARIES( exiv2lib ${LIBINTL_LIBRARIES} )
++    TARGET_LINK_LIBRARIES( exiv2lib ${Intl_LIBRARIES} )
+ ENDIF( EXIV2_ENABLE_NLS )
+ 
+ IF( ICONV_FOUND )
