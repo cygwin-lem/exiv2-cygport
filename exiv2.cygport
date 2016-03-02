@@ -2,7 +2,7 @@ inherit cmake
 
 NAME="exiv2"
 VERSION=0.25
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="Exiv, IPTC, and XMP image metadata library"
 DESCRIPTION="Exiv2 is a C++ library and a command line utility to access
@@ -22,6 +22,9 @@ libexiv2_14_CONTENTS="usr/bin/cygexiv2-14.dll"
 libexiv2_devel_CONTENTS="usr/include/ usr/lib/"
 
 DIFF_EXCLUDES="exv_conf.h svn_version.h"
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=888769
+CPPFLAGS+=" -DBanAllEntityUsage=1"
 
 CYGCMAKE_ARGS="
 	-DEXIV2_ENABLE_BUILD_PO:BOOL=ON
