@@ -1,0 +1,8 @@
+category: Graphics
+build-depends: cygport   cmake  pkg-config  gettext  libexpat-devel  libiconv-devel  libintl-devel  zlib-devel  python3
+sdesc: "Exiv, IPTC, and XMP image metadata utility"
+ldesc: "Exiv2 is a C++ library and a command line utility to access
+Exiv, IPTC, and XMP image metadata."
+skip:
+test:
+homepage: https://www.exiv2.org/
