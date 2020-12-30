@@ -1,38 +1,88 @@
 inherit cmake
 
 NAME="exiv2"
-VERSION=0.25
-RELEASE=2
+VERSION=0.27.3
+RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Exiv, IPTC, and XMP image metadata library"
 DESCRIPTION="Exiv2 is a C++ library and a command line utility to access
 Exiv, IPTC, and XMP image metadata."
-HOMEPAGE="http://www.exiv2.org/"
-SRC_URI="http://www.exiv2.org/exiv2-${VERSION}.tar.gz"
+HOMEPAGE="https://www.exiv2.org/"
+
+################################
+## Source from a git repository
+################################
+GIT_REPO="https://github.com/Exiv2/exiv2"
+declare -A GIT_DATEHASH_BY_NAME=(
+  # git log --date=iso-strict --format='%cd/%H' -1
+  [0.27.3]=2020-06-30T15:58:12+01:00/194bb65ac568a5435874c9d9d73b1c8a68e4edec
+)
+
+REV_HASH="${GIT_DATEHASH_BY_NAME[${VERSION}]#*/}"
+REV_DATE="${GIT_DATEHASH_BY_NAME[${VERSION}]%/*}"
+REV_DATE_SHORT="${GIT_DATEHASH_BY_NAME[${VERSION}]%T*}"
+GIT_BASENAME="${GIT_REPO##*/}"
+SRC_URI="${GIT_REPO}/archive/${REV_HASH}.tar.gz"   # GitHub
+#SRC_URI="${GIT_REPO}/-/archive/${REV_HASH}/${GIT_BASENAME}-${REV_HASH}.tar.bz2" # GitLab
+SRC_DIR="${GIT_BASENAME}-${REV_HASH}"
+
+################################
+## Patches
+################################
 PATCH_URI="
-	http://pkgs.fedoraproject.org/cgit/exiv2.git/plain/exiv2-0.24-cmake_mandir.patch
-	0.25-find-libintl.patch
 "
 
-PKG_NAMES="${NAME} lib${NAME}_14 lib${NAME}-devel"
+################################
+## Requirements for building
+################################
+BUILD_REQUIRES="\
+  cmake\
+  pkg-config\
+  gettext\
+  libexpat-devel\
+  libiconv-devel\
+  libintl-devel\
+  zlib-devel\
+"
+
+################################
+## Requirements for testing
+################################
+BUILD_REQUIRES+="\
+  python3\
+"
+
+################################
+## ABI
+################################
+ABI=27
+
+################################
+## Packages
+################################
+PKG_NAMES="${NAME} lib${NAME}_${ABI} lib${NAME}-devel"
 exiv2_CATEGORY="Graphics"
 exiv2_SUMMARY=${SUMMARY/library/utility}
 exiv2_CONTENTS="--exclude=html usr/bin/*.exe usr/share/"
-libexiv2_14_CONTENTS="usr/bin/cygexiv2-14.dll"
+printf -v "libexiv2_${ABI}_CONTENTS" "%s" "usr/bin/cygexiv2-${ABI}.dll"
 libexiv2_devel_CONTENTS="usr/include/ usr/lib/"
 
-DIFF_EXCLUDES="exv_conf.h svn_version.h"
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=888769
 CPPFLAGS+=" -DBanAllEntityUsage=1"
 
+CYGCMAKE_GENERATOR="Unix Makefiles"
+
 CYGCMAKE_ARGS="
-	-DEXIV2_ENABLE_BUILD_PO:BOOL=ON
-	-DEXIV2_ENABLE_BUILD_SAMPLES:BOOL=OFF
+  -DBUILD_SHARED_LIBS:BOOL=ON
+  -DEXIV2_ENABLE_NLS:BOOL=ON
+  -DEXIV2_BUILD_SAMPLES:BOOL=ON
 "
 
-src_install() {
-	cd ${B}
-	cyginstall
-	rm -f ${D}/usr/lib/pkgconfig/*.lsm
+################################
+## Tests
+################################
+src_test() {
+  cd ${B}
+  make tests
 }
