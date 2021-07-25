@@ -1,7 +1,7 @@
 inherit cmake
 
 NAME="exiv2"
-VERSION=0.27.3
+VERSION=0.27.4
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Exiv, IPTC, and XMP image metadata library"
@@ -15,6 +15,7 @@ HOMEPAGE="https://www.exiv2.org/"
 GIT_REPO="https://github.com/Exiv2/exiv2"
 declare -A GIT_DATEHASH_BY_NAME=(
   # git log --date=iso-strict --format='%cd/%H' -1
+  [0.27.4]=2021-06-15T14:57:33+01:00/v0.27.4
   [0.27.3]=2020-06-30T15:58:12+01:00/v0.27.3
 )
 REV_HASH="${GIT_DATEHASH_BY_NAME[${VERSION}]#*/}"
@@ -28,6 +29,7 @@ SRC_DIR="${GIT_BASENAME}-${REV_HASH#v}"
 ## Patches
 ################################
 PATCH_URI="
+  0.27.4-nls-test.patch
 "
 
 ################################
@@ -36,7 +38,7 @@ PATCH_URI="
 BUILD_REQUIRES="\
   cmake\
   pkg-config\
-  gettext\
+  gettext-devel\
   libexpat-devel\
   libiconv-devel\
   libintl-devel\
