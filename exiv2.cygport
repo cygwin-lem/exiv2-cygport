@@ -17,14 +17,12 @@ declare -A GIT_DATEHASH_BY_NAME=(
   # git log --date=iso-strict --format='%cd/%H' -1
   [0.27.3]=2020-06-30T15:58:12+01:00/194bb65ac568a5435874c9d9d73b1c8a68e4edec
 )
-
 REV_HASH="${GIT_DATEHASH_BY_NAME[${VERSION}]#*/}"
 REV_DATE="${GIT_DATEHASH_BY_NAME[${VERSION}]%/*}"
-REV_DATE_SHORT="${GIT_DATEHASH_BY_NAME[${VERSION}]%T*}"
+REV_DATE_SHORT="${REV_DATE%%T*}"
 GIT_BASENAME="${GIT_REPO##*/}"
-SRC_URI="${GIT_REPO}/archive/${REV_HASH}.tar.gz"   # GitHub
-#SRC_URI="${GIT_REPO}/-/archive/${REV_HASH}/${GIT_BASENAME}-${REV_HASH}.tar.bz2" # GitLab
-SRC_DIR="${GIT_BASENAME}-${REV_HASH}"
+SRC_URI="${GIT_REPO}/archive/${REV_HASH}/${GIT_BASENAME}-${VERSION}.tar.gz"
+SRC_DIR="${GIT_BASENAME}-${REV_HASH#v}"
 
 ################################
 ## Patches
