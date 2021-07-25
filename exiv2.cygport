@@ -15,7 +15,7 @@ HOMEPAGE="https://www.exiv2.org/"
 GIT_REPO="https://github.com/Exiv2/exiv2"
 declare -A GIT_DATEHASH_BY_NAME=(
   # git log --date=iso-strict --format='%cd/%H' -1
-  [0.27.3]=2020-06-30T15:58:12+01:00/194bb65ac568a5435874c9d9d73b1c8a68e4edec
+  [0.27.3]=2020-06-30T15:58:12+01:00/v0.27.3
 )
 REV_HASH="${GIT_DATEHASH_BY_NAME[${VERSION}]#*/}"
 REV_DATE="${GIT_DATEHASH_BY_NAME[${VERSION}]%/*}"
