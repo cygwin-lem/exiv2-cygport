@@ -7,7 +7,7 @@ CATEGORY="Libs"
 SUMMARY="Exiv, IPTC, and XMP image metadata library"
 DESCRIPTION="Exiv2 is a C++ library and a command line utility to access
 Exiv, IPTC, and XMP image metadata."
-HOMEPAGE="https://www.exiv2.org/"
+HOMEPAGE="https://exiv2.org/"
 
 ################################
 ## Source from a git repository
