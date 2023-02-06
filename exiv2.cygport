@@ -9,6 +9,10 @@ DESCRIPTION="Exiv2 is a C++ library and a command line utility to access
 Exiv, IPTC, and XMP image metadata."
 HOMEPAGE="https://exiv2.org/"
 
+LICENSE="GPL-2.0-or-later"
+# cf. https://www.cygwin.com/packaging-hint-files.html#pvr-src.hint
+#     https://spdx.org/licenses/GPL-2.0-or-later.html
+
 ################################
 ## Source from a git repository
 ################################
