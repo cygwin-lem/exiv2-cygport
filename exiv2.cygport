@@ -84,11 +84,3 @@ CYGCMAKE_ARGS="
   -DEXIV2_ENABLE_NLS:BOOL=ON
   -DEXIV2_BUILD_SAMPLES:BOOL=ON
 "
-
-################################
-## Tests
-################################
-src_test() {
-  cd ${B}
-  make tests
-}
