@@ -1,7 +1,7 @@
 inherit cmake
 
 NAME="exiv2"
-VERSION=0.27.6
+VERSION=0.28.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Exiv, IPTC, and XMP image metadata library"
@@ -19,6 +19,7 @@ LICENSE="GPL-2.0-or-later"
 GIT_REPO="https://github.com/Exiv2/exiv2"
 declare -A GIT_DATEHASH_BY_NAME=(
   # git log --date=iso-strict --format='%cd/%H' -1
+  [0.28.0]=2023-05-08T17:01:13+01:00/v0.28.0
   [0.27.6]=2023-01-18T21:57:53+00:00/v0.27.6
   [0.27.5]=2021-10-21T16:21:12+01:00/v0.27.5
   [0.27.4p39]=2021-07-17T12:18:07+01:00/c4861fe77c4a2611c03c7e5b70f41c0cf77f67ad
@@ -46,8 +47,10 @@ BUILD_REQUIRES="\
   cmake\
   pkg-config\
   gettext-devel\
+  libbrotli-devel\
   libexpat-devel\
   libiconv-devel\
+  libinih-devel\
   libintl-devel\
   zlib-devel\
 "
@@ -62,7 +65,7 @@ BUILD_REQUIRES+="\
 ################################
 ## ABI
 ################################
-ABI=27
+ABI=28
 
 ################################
 ## Packages
