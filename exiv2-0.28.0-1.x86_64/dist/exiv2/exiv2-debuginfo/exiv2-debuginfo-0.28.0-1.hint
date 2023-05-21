@@ -1,0 +1,7 @@
+category: Debug
+requires: cygwin-debuginfo
+external-source: exiv2
+sdesc: "Debug info for exiv2"
+ldesc: "This package contains files necessary for debugging the
+exiv2 package with gdb."
+

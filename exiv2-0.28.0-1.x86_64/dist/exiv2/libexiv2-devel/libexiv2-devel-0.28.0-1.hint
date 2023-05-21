@@ -1,0 +1,7 @@
+category: Libs
+requires: libbrotli-devel libexiv2_28 libexpat-devel libinih-devel pkg-config zlib-devel
+sdesc: "Exiv, IPTC, and XMP image metadata library"
+ldesc: "Exiv2 is a C++ library and a command line utility to access
+Exiv, IPTC, and XMP image metadata."
+external-source: exiv2
+
