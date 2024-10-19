@@ -1,7 +1,7 @@
 inherit cmake
 
 NAME="exiv2"
-VERSION=0.28.2
+VERSION=0.28.3
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Exiv, IPTC, and XMP image metadata library"
@@ -19,6 +19,7 @@ LICENSE="GPL-2.0-or-later"
 GIT_REPO="https://github.com/Exiv2/exiv2"
 declare -A GIT_DATEHASH_BY_NAME=(
   # git log --date=iso-strict --format='%cd/%H' -1
+  [0.28.3]=2024-07-08T02:43:13-04:00/v0.28.3
   [0.28.2]=2024-02-13T12:32:04-05:00/v0.28.2
   [0.28.1]=2023-11-06T12:17:09+00:00/v0.28.1
   [0.27.6]=2023-01-18T21:57:53+00:00/v0.27.6
@@ -38,7 +39,6 @@ SRC_DIR="${GIT_BASENAME}-${REV_HASH#v}"
 ## Patches
 ################################
 PATCH_URI="
-  0.27.4-nls-test.patch
 "
 
 ################################
@@ -87,5 +87,5 @@ CYGCMAKE_GENERATOR="Unix Makefiles"
 CYGCMAKE_ARGS="
   -DBUILD_SHARED_LIBS:BOOL=ON
   -DEXIV2_ENABLE_NLS:BOOL=ON
-  -DEXIV2_BUILD_SAMPLES:BOOL=ON
+  -DEXIV2_BUILD_SAMPLES:BOOL=OFF
 "
