@@ -1,7 +1,7 @@
 inherit cmake
 
 NAME="exiv2"
-VERSION=0.28.7
+VERSION=0.28.8
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Exiv, IPTC, and XMP image metadata library"
@@ -19,6 +19,7 @@ LICENSE="GPL-2.0-or-later"
 GIT_REPO="https://github.com/Exiv2/exiv2"
 declare -A GIT_DATEHASH_BY_NAME=(
   # git log --date=iso-strict --format='%cd/%H' -1
+  [0.28.8]=2026-03-01T11:20:19Z/v0.28.8
   [0.28.7]=2025-08-31T09:31:02+01:00/v0.28.7
   [0.28.6]=2025-08-29T18:51:02+01:00/v0.28.6
   [0.28.5]=2025-02-21T16:18:05Z/v0.28.5
