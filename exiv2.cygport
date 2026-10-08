@@ -1,7 +1,7 @@
 inherit cmake
 
 NAME="exiv2"
-VERSION=0.28.8
+VERSION=0.28.9
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Exiv, IPTC, and XMP image metadata library"
@@ -19,6 +19,7 @@ LICENSE="GPL-2.0-or-later"
 GIT_REPO="https://github.com/Exiv2/exiv2"
 declare -A GIT_DATEHASH_BY_NAME=(
   # git log --date=iso-strict --format='%cd/%H' -1
+  [0.28.9]=2026-08-30T20:33:50+01:00/b0859fc61fea5dedfc898aece6b15893ddf4314e/v0.28.9
   [0.28.8]=2026-03-01T11:20:19Z/v0.28.8
   [0.28.7]=2025-08-31T09:31:02+01:00/v0.28.7
   [0.28.6]=2025-08-29T18:51:02+01:00/v0.28.6
@@ -33,11 +34,11 @@ declare -A GIT_DATEHASH_BY_NAME=(
   [0.27.4]=2021-06-15T14:57:33+01:00/v0.27.4
   [0.27.3]=2020-06-30T15:58:12+01:00/v0.27.3
 )
-REV_HASH="${GIT_DATEHASH_BY_NAME[${VERSION}]#*/}"
-REV_DATE="${GIT_DATEHASH_BY_NAME[${VERSION}]%/*}"
+REV_HASH="${GIT_DATEHASH_BY_NAME[${VERSION}]##*/}"
+REV_DATE="${GIT_DATEHASH_BY_NAME[${VERSION}]%%/*}"
 REV_DATE_SHORT="${REV_DATE%%T*}"
 GIT_BASENAME="${GIT_REPO##*/}"
-SRC_URI="${GIT_REPO}/archive/${REV_HASH}/${GIT_BASENAME}-${VERSION}.tar.gz"
+SRC_URI="${GIT_REPO}/archive/${REV_HASH}/${GIT_BASENAME}-${REV_HASH}.tar.gz"   # GitHub
 SRC_DIR="${GIT_BASENAME}-${REV_HASH#v}"
 
 ################################
